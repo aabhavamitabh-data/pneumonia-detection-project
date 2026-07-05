@@ -5,11 +5,12 @@ import { useState } from "react";
 const API_URL = "https://pneumonia-detector-api-195849682317.asia-south1.run.app/predict";
 
 export default function Home() {
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [previewUrl, setPreviewUrl] = useState(null);
-  const [result, setResult] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+const [result, setResult] = useState<any>(null);
+const [loading, setLoading] = useState(false);
+const [error, setError] = useState<string | null>(null);
+
 
  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
