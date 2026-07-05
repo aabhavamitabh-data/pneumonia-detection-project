@@ -112,7 +112,7 @@ const [error, setError] = useState<string | null>(null);
 
             {result.all_probabilities && (
               <div className="space-y-2">
-                {Object.entries(result.all_probabilities).map(([label, prob]) => (
+                {Object.entries(result.all_probabilities as Record<string, number>).map(([label, prob]) => (
                   <div key={label}>
                     <div className="flex justify-between text-xs text-gray-600 mb-1">
                       <span>{label}</span>
